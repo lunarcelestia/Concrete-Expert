@@ -935,32 +935,8 @@ function initializeCompositionAnimation() {
     observer.observe(observedEl);
 }
 
-var backToTop = document.getElementById('backToTop');
-var headerEl = document.querySelector('.header');
-
-function updateBackToTopVisibility() {
-    if (!backToTop) return;
-    var headerHeight = headerEl ? headerEl.offsetHeight : 120;
-    if (window.pageYOffset > headerHeight) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
-    }
-}
-
-if (backToTop) {
-    backToTop.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-
-window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
-window.addEventListener('resize', updateBackToTopVisibility);
-
 document.addEventListener('DOMContentLoaded', function () {
     initialize();
     initializeCompositionAnimation();
-    updateBackToTopVisibility();
 });
 
