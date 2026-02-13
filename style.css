@@ -636,12 +636,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0.5rem;
     color: var(--text-light);
     line-height: 1.8;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .test-section {
-    margin-top: 2rem;
-    padding-top: 2rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
 }
 
     .test-section h3 {
@@ -1317,3 +1317,4 @@ h1, h2, h3, h4, h5, h6 {
             font-size: 1rem;
         }
 }
+
