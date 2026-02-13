@@ -1144,58 +1144,112 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 100%;
     }
 
-    /* Меняем порядок элементов в шапке */
+    /* Шапка в одну строку с лого, бургером и темой */
     .header-top-inner {
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        height: 70px; /* Фиксированная высота шапки */
     }
 
     .header-left {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        width: 100%; /* Занимает всю ширину */
+        gap: 0.5rem;
+        flex: 1;
     }
 
-    /* Логотип и бургер в одной строке */
+    /* Логотип */
     .logo-link {
-        height: 60px;
+        height: 50px;
+        display: flex;
+        align-items: center;
     }
 
     .logo-img {
-        height: 60px;
+        height: 45px; /* Немного меньше */
         width: auto;
     }
 
+    /* Бургер справа от лого */
     .burger-btn {
-        margin-left: auto; /* Прижимает бургер вправо */
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        margin-left: auto; /* Прижимает бургер к теме */
     }
 
-    /* Кнопки меню - на следующей строке, под бургером */
-    .header-nav-inline {
-        width: 100%;
-        order: 3; /* Ставим после всего */
-        margin-top: 0.5rem;
-    }
-
-    .main-nav {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start; /* Выравниваем слева */
-        gap: 0.75rem;
-        flex-wrap: wrap;
-    }
-
-    .nav-link {
-        font-size: 0.9rem;
+    /* Кнопка темы справа */
+    .theme-toggle {
+        height: 40px;
         padding: 0.5rem 1rem;
+        margin-left: 0.5rem;
         white-space: nowrap;
     }
 
-    /* Кнопка темы тоже на первой строке, справа */
-    .theme-toggle {
-        margin-left: auto; /* Прижимает вправо */
+    /* Меню (по умолчанию скрыто, появляется при открытии) */
+    .header-nav-inline {
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Сразу под шапкой */
+        left: 0;
+        background: var(--bg-color);
+        padding: 1rem 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+        display: none; /* Скрыто по умолчанию */
+    }
+
+    .header-nav-inline.nav-open {
+        display: block; /* Показываем при открытии */
+    }
+
+    .main-nav {
+        display: flex;
+        flex-direction: column; /* Кнопки вертикально */
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+        white-space: nowrap;
+        width: 100%;
+        text-align: left;
+        border-radius: 8px;
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Анимация появления кнопок */
+    .header-nav-inline.nav-open .nav-link {
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Задержки для анимации */
+    .header-nav-inline.nav-open .nav-link:nth-child(1) {
+        animation-delay: 0.05s;
+    }
+
+    .header-nav-inline.nav-open .nav-link:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+
+    .header-nav-inline.nav-open .nav-link:nth-child(3) {
+        animation-delay: 0.15s;
     }
 
     /* Остальные стили без изменений */
@@ -1222,6 +1276,7 @@ h1, h2, h3, h4, h5, h6 {
         word-break: break-word;
     }
 
+    /* Таблица */
     .table-wrapper {
         overflow-x: auto;
         width: 100%;
@@ -1253,6 +1308,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.1rem;
     }
 
+    /* Остальное */
     .composition-image-wrapper {
         width: 100%;
         padding: 0 16px;
@@ -1317,16 +1373,27 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .logo-link {
-        height: 50px;
+        height: 45px;
     }
 
     .logo-img {
-        height: 50px;
+        height: 40px;
+    }
+
+    .burger-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .theme-toggle {
+        height: 36px;
+        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
     }
 
     .nav-link {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.95rem;
+        padding: 0.7rem 0.8rem;
     }
 
     .concrete-table td {
@@ -1348,12 +1415,5 @@ h1, h2, h3, h4, h5, h6 {
     .carousel-section h2 {
         font-size: 1.8rem;
     }
-
-    .panel-header h2 {
-        font-size: 1.5rem;
-    }
-
-    .test-section h3 {
-        font-size: 1.2rem;
-    }
 }
+
