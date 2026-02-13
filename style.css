@@ -984,7 +984,7 @@ h1, h2, h3, h4, h5, h6 {
         visibility: visible;
     }
 
-/* Мобильное меню: панель слева и оверлей (на ПК скрыты) */
+
 .mobile-menu-overlay {
     display: none;
     position: fixed;
@@ -1363,6 +1363,45 @@ h1, h2, h3, h4, h5, h6 {
     .side-panel {
         width: 100%;
         right: -100%;
+    }
+
+    .table-wrapper {
+        overflow-x: visible;
+        max-width: 100%;
+    }
+
+    .concrete-table {
+        min-width: 0;
+        width: 100%;
+        table-layout: fixed;
+        border-spacing: 0 0.5rem;
+    }
+
+    .concrete-table th:nth-child(1),
+    .concrete-table td:nth-child(1) {
+        width: 18%;
+    }
+
+    .concrete-table th:nth-child(2),
+    .concrete-table td:nth-child(2) {
+        width: 28%;
+    }
+
+    .concrete-table th:nth-child(3),
+    .concrete-table td:nth-child(3) {
+        width: 54%;
+    }
+
+    .concrete-table th,
+    .concrete-table td {
+        padding: 0.5rem 0.35rem;
+        font-size: 0.75rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .concrete-table td strong {
+        font-size: 0.9rem;
     }
 }
 
