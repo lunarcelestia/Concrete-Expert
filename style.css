@@ -1145,38 +1145,41 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .header-top .container {
-        flex-wrap: nowrap; /* УБРАЛ wrap, чтобы элементы были в одну строку */
-        gap: 0.5rem; /* УМЕНЬШИЛ gap */
+        flex-wrap: wrap; /* МЕНЯЕМ ОБРАТНО НА wrap, чтобы бургер был под лого */
+        gap: 0.5rem;
     }
 
-    /* Уменьшаем логотип */
+    /* Уменьшаем логотип, но оставляем читаемым */
     .logo-link {
-        height: 50px; /* УМЕНЬШИЛ */
+        height: 60px; /* НЕМНОГО УВЕЛИЧИЛ */
     }
 
     .logo-img {
-        height: 50px; /* УМЕНЬШИЛ с 132px */
+        height: 60px; /* НЕМНОГО УВЕЛИЧИЛ */
         width: auto;
     }
 
     .logo {
-        font-size: 1.4rem; /* УМЕНЬШИЛ */
+        font-size: 1.4rem;
     }
 
     .header-nav {
         padding: 0.5rem 0;
+        width: 100%; /* Чтобы занимал всю ширину */
     }
 
     .main-nav {
         width: 100%;
+        display: flex;
         justify-content: center;
-        gap: 0.5rem; /* УМЕНЬШИЛ */
+        gap: 0.75rem; /* УВЕЛИЧИЛ зазор между кнопками */
         flex-wrap: wrap;
     }
 
     .nav-link {
-        font-size: 0.8rem; /* УМЕНЬШИЛ */
-        padding: 0.3rem 0.6rem; /* УМЕНЬШИЛ */
+        font-size: 0.9rem; /* УВЕЛИЧИЛ обратно */
+        padding: 0.5rem 1rem; /* УВЕЛИЧИЛ обратно */
+        white-space: nowrap; /* Запрещаем перенос текста в кнопках */
     }
 
     .hero-banner {
@@ -1185,72 +1188,67 @@ h1, h2, h3, h4, h5, h6 {
         max-height: 300px;
     }
 
-    /* УМЕНЬШАЕМ ВСЕ ЗАГОЛОВКИ */
+    /* УМЕНЬШАЕМ ЗАГОЛОВКИ, НО НЕ СИЛЬНО */
     .intro h2 {
-        font-size: 1.8rem; /* УМЕНЬШИЛ */
+        font-size: 2.2rem; /* УВЕЛИЧИЛ */
         line-height: 1.2;
         word-break: break-word;
     }
 
     .composition-section h2 {
-        font-size: 1.8rem; /* УМЕНЬШИЛ */
+        font-size: 2.2rem; /* УВЕЛИЧИЛ */
         line-height: 1.2;
         word-break: break-word;
     }
 
     .carousel-section h2 {
-        font-size: 1.8rem; /* УМЕНЬШИЛ */
+        font-size: 2.2rem; /* УВЕЛИЧИЛ */
         word-break: break-word;
     }
 
-    /* ТАБЛИЦА - УМЕНЬШАЕМ ТЕКСТ И ДОБАВЛЯЕМ ПЕРЕНОСЫ */
+    /* ТАБЛИЦА - УВЕЛИЧИВАЕМ ТЕКСТ, НО ОСТАВЛЯЕМ ПЕРЕНОСЫ */
     .table-wrapper {
-        overflow-x: hidden; /* Убираем горизонтальный скролл */
+        overflow-x: auto; /* ВОЗВРАЩАЕМ скролл, если не влезает */
         width: 100%;
+        -webkit-overflow-scrolling: touch;
     }
 
     .concrete-table {
-        font-size: 0.8rem; /* Уменьшаем общий размер */
+        font-size: 1rem; /* УВЕЛИЧИЛ обратно */
         min-width: 100%; /* Таблица на всю ширину */
-        border-spacing: 0 0.5rem; /* Уменьшаем расстояние между строками */
+        border-spacing: 0 0.5rem;
     }
 
     .concrete-table th {
-        padding: 0.4rem 0.3rem; /* УМЕНЬШИЛИ */
-        font-size: 0.7rem; /* Маленькие заголовки */
-        white-space: normal; /* Разрешаем перенос */
+        padding: 0.6rem 0.5rem; /* УВЕЛИЧИЛ */
+        font-size: 0.85rem; /* УВЕЛИЧИЛ */
+        white-space: normal;
         line-height: 1.2;
     }
 
     .concrete-table td {
-        padding: 0.5rem 0.3rem; /* УМЕНЬШИЛИ */
-        font-size: 0.75rem; /* УМЕНЬШИЛИ */
-        line-height: 1.3;
-        white-space: normal; /* Разрешаем перенос текста */
-        word-break: break-word; /* Переносим длинные слова */
+        padding: 0.8rem 0.5rem; /* УВЕЛИЧИЛ */
+        font-size: 0.95rem; /* УВЕЛИЧИЛ */
+        line-height: 1.4;
+        white-space: normal;
+        word-break: break-word;
     }
 
     .concrete-table td strong {
-        font-size: 0.85rem; /* УМЕНЬШИЛИ жирный текст */
+        font-size: 1.1rem; /* УВЕЛИЧИЛ */
     }
 
-    /* ОПТИМИЗИРУЕМ ШИРИНУ КОЛОНОК */
+    /* Убираем фиксированную ширину колонок - пусть таблица сама распределяет */
     .concrete-table th:nth-child(1),
-    .concrete-table td:nth-child(1) {
-        width: 15%; /* Класс бетона */
-    }
-
+    .concrete-table td:nth-child(1),
     .concrete-table th:nth-child(2),
-    .concrete-table td:nth-child(2) {
-        width: 25%; /* Прочность */
-    }
-
+    .concrete-table td:nth-child(2),
     .concrete-table th:nth-child(3),
     .concrete-table td:nth-child(3) {
-        width: 60%; /* Область применения */
+        width: auto; /* Автоматическая ширина */
     }
 
-    /* ОСТАЛЬНЫЕ СТИЛИ БЕЗ ИЗМЕНЕНИЙ */
+    /* ОСТАЛЬНЫЕ СТИЛИ */
     .composition-image-wrapper {
         width: 100%;
         padding: 0 16px;
@@ -1261,12 +1259,6 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         max-width: 100%;
         gap: 10px;
-    }
-
-    .composition-collage-item,
-    .composition-collage-item.is-visible {
-        opacity: 1;
-        transform: translateY(0);
     }
 
     .composition-collage-item img {
@@ -1285,12 +1277,6 @@ h1, h2, h3, h4, h5, h6 {
         gap: 1.25rem;
     }
 
-    .composition-card,
-    .composition-card.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
     .composition-card-title {
         font-size: 1.4rem;
     }
@@ -1299,58 +1285,25 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem;
     }
 
-    .section-divider--inset {
-        width: calc(100% - 32px);
-        margin-left: 16px;
-        margin-right: 16px;
-    }
-
-    .composition-section {
-        overflow-x: hidden;
-        padding: 0 0 2rem;
-    }
-
-    .carousel-section .container {
-        padding: 0 16px;
-    }
-
-    .carousel-container {
-        height: 50vh;
-        border-radius: 0;
-    }
-
-    .slide-content {
-        left: 20px;
-        max-width: 85%;
-        padding-right: 20px;
-    }
-
-    .slide-content h3 {
-        font-size: 1.5rem; /* УМЕНЬШИЛ */
-    }
-
-    .slide-content p {
-        font-size: 1rem; /* УМЕНЬШИЛ */
-    }
-
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-    }
-
     .side-panel {
         width: 100%;
         right: -100%;
     }
 
-    /* УМЕНЬШАЕМ ЗАГОЛОВОК В БОКОВОЙ ПАНЕЛИ */
     .panel-header h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem; /* УВЕЛИЧИЛ */
     }
 
     .test-section h3 {
-        font-size: 1.2rem; /* УМЕНЬШИЛ */
+        font-size: 1.3rem; /* УВЕЛИЧИЛ */
+    }
+
+    .slide-content h3 {
+        font-size: 1.6rem; /* УВЕЛИЧИЛ */
+    }
+
+    .slide-content p {
+        font-size: 1.1rem; /* УВЕЛИЧИЛ */
     }
 }
 
@@ -1359,69 +1312,45 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0 12px;
     }
 
-    /* ЕЩЕ БОЛЬШЕ УМЕНЬШАЕМ ЛОГОТИП */
     .logo-link {
-        height: 40px;
+        height: 50px;
     }
 
     .logo-img {
-        height: 40px;
-    }
-
-    .logo {
-        font-size: 1.2rem;
+        height: 50px;
     }
 
     .nav-link {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.4rem;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
     }
 
-    /* ЕЩЕ БОЛЬШЕ УМЕНЬШАЕМ ТАБЛИЦУ */
+    /* Таблица для очень маленьких экранов */
     .concrete-table td {
-        padding: 0.3rem 0.2rem;
-        font-size: 0.7rem;
+        padding: 0.6rem 0.4rem;
+        font-size: 0.85rem;
     }
 
     .concrete-table td strong {
-        font-size: 0.75rem;
+        font-size: 0.95rem;
     }
 
     .concrete-table th {
-        padding: 0.3rem 0.2rem;
-        font-size: 0.6rem;
+        padding: 0.5rem 0.4rem;
+        font-size: 0.75rem;
     }
 
     .intro h2,
     .composition-section h2,
     .carousel-section h2 {
-        font-size: 1.5rem; /* ЕЩЕ УМЕНЬШИЛИ */
+        font-size: 1.8rem;
     }
 
-    .composition-collage-item img {
-        height: 120px;
+    .panel-header h2 {
+        font-size: 1.5rem;
     }
 
-    .composition-image-wrapper,
-    .composition-grid-wrapper {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-
-    .panel-content {
-        padding: 1rem;
-    }
-
-    .slide-content {
-        max-width: 90%;
-        left: 15px;
-    }
-
-    .slide-content h3 {
-        font-size: 1.3rem;
-    }
-
-    .slide-content p {
-        font-size: 0.9rem;
+    .test-section h3 {
+        font-size: 1.2rem;
     }
 }
