@@ -1158,15 +1158,15 @@ h1, h2, h3, h4, h5, h6 {
         width: auto;
     }
 
-    /* Логотип БОЛЬШОГО размера (как на ПК) */
+    /* Логотип УМЕНЬШЕН, чтобы не пересекалось с баннером */
     .logo-link {
-        height: 132px;
+        height: 90px; /* УМЕНЬШЕНО со 132px до 90px */
         display: flex;
         align-items: center;
     }
 
     .logo-img {
-        height: 132px;
+        height: 90px; /* УМЕНЬШЕНО со 132px до 90px */
         width: auto;
     }
 
@@ -1175,9 +1175,9 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
     }
 
-    /* Кнопка темы справа, такого же размера */
+    /* Кнопка темы справа */
     .theme-toggle {
-        height: 44px;
+        height: 40px;
         padding: 0.5rem 1rem;
         margin-left: auto;
         white-space: nowrap;
@@ -1186,46 +1186,19 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.2rem;
     }
 
-    /* Меню в ОДИН РЯД под шапкой */
-    .header-nav-inline {
-        display: flex !important; /* Показываем */
-        width: 100%;
-        margin-top: 0.5rem;
-        order: 3;
-    }
-
-    .main-nav {
-        display: flex;
-        flex-direction: row; /* В одну строку */
-        justify-content: space-between; /* Равномерно распределяем */
-        gap: 0.5rem;
-        width: 100%;
-    }
-
+    /* ПОЛНОСТЬЮ УБИРАЕМ КНОПКИ МЕНЮ */
+    .header-nav-inline,
+    .main-nav,
     .nav-link {
-        font-size: 0.9rem;
-        padding: 0.6rem 0.5rem;
-        white-space: nowrap;
-        text-align: center;
-        flex: 1; /* Равная ширина */
-        opacity: 1;
-        transform: none;
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
+        display: none !important;
     }
 
-    /* Убираем анимации */
-    .header-nav-inline.nav-open .nav-link {
-        opacity: 1;
-        transform: none;
-        animation: none;
-    }
-
-    /* Остальные мобильные стили (таблица, заголовки и т.д.) */
+    /* Остальные мобильные стили */
     .hero-banner {
         height: 25vh;
         min-height: 200px;
         max-height: 300px;
+        margin-top: 0; /* Убираем возможные отступы */
     }
 
     .intro h2 {
@@ -1341,23 +1314,19 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0 12px;
     }
 
+    /* Еще немного уменьшаем лого для очень маленьких экранов */
     .logo-link {
-        height: 110px;
+        height: 70px;
     }
 
     .logo-img {
-        height: 110px;
+        height: 70px;
     }
 
     .theme-toggle {
-        height: 40px;
+        height: 36px;
         padding: 0.4rem 0.8rem;
         font-size: 1rem;
-    }
-
-    .nav-link {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.3rem;
     }
 
     .concrete-table td {
