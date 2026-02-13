@@ -1145,12 +1145,22 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .header-top .container {
-        flex-wrap: wrap;
-        gap: 1rem;
+        flex-wrap: nowrap; /* УБРАЛ wrap, чтобы элементы были в одну строку */
+        gap: 0.5rem; /* УМЕНЬШИЛ gap */
+    }
+
+    /* Уменьшаем логотип */
+    .logo-link {
+        height: 50px; /* УМЕНЬШИЛ */
+    }
+
+    .logo-img {
+        height: 50px; /* УМЕНЬШИЛ с 132px */
+        width: auto;
     }
 
     .logo {
-        font-size: 1.6rem;
+        font-size: 1.4rem; /* УМЕНЬШИЛ */
     }
 
     .header-nav {
@@ -1160,13 +1170,13 @@ h1, h2, h3, h4, h5, h6 {
     .main-nav {
         width: 100%;
         justify-content: center;
-        gap: 0.8rem;
+        gap: 0.5rem; /* УМЕНЬШИЛ */
         flex-wrap: wrap;
     }
 
     .nav-link {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem; /* УМЕНЬШИЛ */
+        padding: 0.3rem 0.6rem; /* УМЕНЬШИЛ */
     }
 
     .hero-banner {
@@ -1175,18 +1185,72 @@ h1, h2, h3, h4, h5, h6 {
         max-height: 300px;
     }
 
+    /* УМЕНЬШАЕМ ВСЕ ЗАГОЛОВКИ */
     .intro h2 {
-        font-size: 2.8rem;
+        font-size: 1.8rem; /* УМЕНЬШИЛ */
+        line-height: 1.2;
+        word-break: break-word;
     }
 
     .composition-section h2 {
-        font-size: 2.8rem;
+        font-size: 1.8rem; /* УМЕНЬШИЛ */
+        line-height: 1.2;
+        word-break: break-word;
     }
 
     .carousel-section h2 {
-        font-size: 2.8rem;
+        font-size: 1.8rem; /* УМЕНЬШИЛ */
+        word-break: break-word;
     }
 
+    /* ТАБЛИЦА - УМЕНЬШАЕМ ТЕКСТ И ДОБАВЛЯЕМ ПЕРЕНОСЫ */
+    .table-wrapper {
+        overflow-x: hidden; /* Убираем горизонтальный скролл */
+        width: 100%;
+    }
+
+    .concrete-table {
+        font-size: 0.8rem; /* Уменьшаем общий размер */
+        min-width: 100%; /* Таблица на всю ширину */
+        border-spacing: 0 0.5rem; /* Уменьшаем расстояние между строками */
+    }
+
+    .concrete-table th {
+        padding: 0.4rem 0.3rem; /* УМЕНЬШИЛИ */
+        font-size: 0.7rem; /* Маленькие заголовки */
+        white-space: normal; /* Разрешаем перенос */
+        line-height: 1.2;
+    }
+
+    .concrete-table td {
+        padding: 0.5rem 0.3rem; /* УМЕНЬШИЛИ */
+        font-size: 0.75rem; /* УМЕНЬШИЛИ */
+        line-height: 1.3;
+        white-space: normal; /* Разрешаем перенос текста */
+        word-break: break-word; /* Переносим длинные слова */
+    }
+
+    .concrete-table td strong {
+        font-size: 0.85rem; /* УМЕНЬШИЛИ жирный текст */
+    }
+
+    /* ОПТИМИЗИРУЕМ ШИРИНУ КОЛОНОК */
+    .concrete-table th:nth-child(1),
+    .concrete-table td:nth-child(1) {
+        width: 15%; /* Класс бетона */
+    }
+
+    .concrete-table th:nth-child(2),
+    .concrete-table td:nth-child(2) {
+        width: 25%; /* Прочность */
+    }
+
+    .concrete-table th:nth-child(3),
+    .concrete-table td:nth-child(3) {
+        width: 60%; /* Область применения */
+    }
+
+    /* ОСТАЛЬНЫЕ СТИЛИ БЕЗ ИЗМЕНЕНИЙ */
     .composition-image-wrapper {
         width: 100%;
         padding: 0 16px;
@@ -1205,9 +1269,9 @@ h1, h2, h3, h4, h5, h6 {
         transform: translateY(0);
     }
 
-        .composition-collage-item img {
-            height: 140px;
-        }
+    .composition-collage-item img {
+        height: 140px;
+    }
 
     .composition-grid-wrapper {
         width: 100%;
@@ -1261,13 +1325,13 @@ h1, h2, h3, h4, h5, h6 {
         padding-right: 20px;
     }
 
-        .slide-content h3 {
-            font-size: 1.8rem;
-        }
+    .slide-content h3 {
+        font-size: 1.5rem; /* УМЕНЬШИЛ */
+    }
 
-        .slide-content p {
-            font-size: 1.1rem;
-        }
+    .slide-content p {
+        font-size: 1rem; /* УМЕНЬШИЛ */
+    }
 
     .carousel-btn {
         width: 40px;
@@ -1279,6 +1343,15 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         right: -100%;
     }
+
+    /* УМЕНЬШАЕМ ЗАГОЛОВОК В БОКОВОЙ ПАНЕЛИ */
+    .panel-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .test-section h3 {
+        font-size: 1.2rem; /* УМЕНЬШИЛ */
+    }
 }
 
 @media (max-width: 480px) {
@@ -1286,8 +1359,43 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0 12px;
     }
 
+    /* ЕЩЕ БОЛЬШЕ УМЕНЬШАЕМ ЛОГОТИП */
+    .logo-link {
+        height: 40px;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
     .logo {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    /* ЕЩЕ БОЛЬШЕ УМЕНЬШАЕМ ТАБЛИЦУ */
+    .concrete-table td {
+        padding: 0.3rem 0.2rem;
+        font-size: 0.7rem;
+    }
+
+    .concrete-table td strong {
+        font-size: 0.75rem;
+    }
+
+    .concrete-table th {
+        padding: 0.3rem 0.2rem;
+        font-size: 0.6rem;
+    }
+
+    .intro h2,
+    .composition-section h2,
+    .carousel-section h2 {
+        font-size: 1.5rem; /* ЕЩЕ УМЕНЬШИЛИ */
     }
 
     .composition-collage-item img {
@@ -1301,7 +1409,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .panel-content {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .slide-content {
@@ -1309,12 +1417,11 @@ h1, h2, h3, h4, h5, h6 {
         left: 15px;
     }
 
-        .slide-content h3 {
-            font-size: 1.5rem;
-        }
+    .slide-content h3 {
+        font-size: 1.3rem;
+    }
 
-        .slide-content p {
-            font-size: 1rem;
-        }
+    .slide-content p {
+        font-size: 0.9rem;
+    }
 }
-
