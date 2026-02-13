@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-top {
-    padding: 1.25rem 0;
+    padding: 1.5rem 0;
 }
 
 .header-top-inner {
@@ -87,11 +87,11 @@ h1, h2, h3, h4, h5, h6 {
 .logo-link {
     display: flex;
     align-items: center;
-    height: 88px;
+    height: 100px;
 }
 
 .logo-img {
-    height: 88px;
+    height: 100px;
     width: auto;
     object-fit: contain;
     background-color: #ffffff;
@@ -167,9 +167,9 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     text-decoration: none;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    padding: 0.6rem 1.15rem;
+    padding: 0.5rem 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
@@ -227,9 +227,9 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(26, 54, 93, 0.08);
     border: 1px solid rgba(26, 54, 93, 0.2);
     color: #1a365d;
-    padding: 0.65rem 1.15rem;
+    padding: 0.5rem 1rem;
     border-radius: 10px;
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
