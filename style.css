@@ -1144,20 +1144,19 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 100%;
     }
 
-    /* Шапка в одну строку с лого, бургером и темой */
+    /* Шапка с лого слева и темой справа */
     .header-top-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: nowrap;
-        height: 70px; /* Фиксированная высота шапки */
+        flex-wrap: wrap;
+        padding: 0.5rem 0;
     }
 
     .header-left {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-        flex: 1;
+        width: auto; /* Не занимает всю ширину */
     }
 
     /* Логотип */
@@ -1168,88 +1167,56 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .logo-img {
-        height: 45px; /* Немного меньше */
+        height: 45px;
         width: auto;
     }
 
-    /* Бургер справа от лого */
+    /* Прячем бургер */
     .burger-btn {
-        width: 40px;
-        height: 40px;
-        padding: 8px;
-        margin-left: auto; /* Прижимает бургер к теме */
+        display: none;
     }
 
-    /* Кнопка темы справа */
+    /* Кнопка темы в правом углу */
     .theme-toggle {
         height: 40px;
         padding: 0.5rem 1rem;
-        margin-left: 0.5rem;
+        margin-left: auto;
         white-space: nowrap;
     }
 
-    /* Меню (по умолчанию скрыто, появляется при открытии) */
+    /* Меню на всю ширину, под шапкой */
     .header-nav-inline {
+        display: block !important; /* Всегда показываем */
         width: 100%;
-        position: absolute;
-        top: 70px; /* Сразу под шапкой */
-        left: 0;
-        background: var(--bg-color);
-        padding: 1rem 16px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 99;
-        display: none; /* Скрыто по умолчанию */
-    }
-
-    .header-nav-inline.nav-open {
-        display: block; /* Показываем при открытии */
+        margin-top: 0.75rem;
+        order: 3;
     }
 
     .main-nav {
         display: flex;
-        flex-direction: column; /* Кнопки вертикально */
-        gap: 0.75rem;
+        flex-direction: row; /* В одну строку */
+        justify-content: space-between; /* Равномерно распределяем */
+        gap: 0.5rem;
         width: 100%;
     }
 
     .nav-link {
-        font-size: 1rem;
-        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.5rem;
         white-space: nowrap;
-        width: 100%;
-        text-align: left;
-        border-radius: 8px;
+        text-align: center;
+        flex: 1; /* Равная ширина для всех кнопок */
         opacity: 1;
         transform: none;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
     }
 
-    /* Анимация появления кнопок */
+    /* Убираем все анимации и задержки */
     .header-nav-inline.nav-open .nav-link {
-        animation: slideDown 0.3s ease forwards;
-    }
-
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Задержки для анимации */
-    .header-nav-inline.nav-open .nav-link:nth-child(1) {
-        animation-delay: 0.05s;
-    }
-
-    .header-nav-inline.nav-open .nav-link:nth-child(2) {
-        animation-delay: 0.1s;
-    }
-
-    .header-nav-inline.nav-open .nav-link:nth-child(3) {
-        animation-delay: 0.15s;
+        opacity: 1;
+        transform: none;
+        animation: none;
     }
 
     /* Остальные стили без изменений */
@@ -1380,11 +1347,6 @@ h1, h2, h3, h4, h5, h6 {
         height: 40px;
     }
 
-    .burger-btn {
-        width: 36px;
-        height: 36px;
-    }
-
     .theme-toggle {
         height: 36px;
         padding: 0.4rem 0.8rem;
@@ -1392,8 +1354,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .nav-link {
-        font-size: 0.95rem;
-        padding: 0.7rem 0.8rem;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.3rem;
     }
 
     .concrete-table td {
@@ -1416,4 +1378,3 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.8rem;
     }
 }
-
