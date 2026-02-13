@@ -63,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {
     position: sticky;
     top: 0;
     z-index: 100;
+    margin-bottom: 0;
 }
 
 .header-top {
@@ -257,6 +258,9 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 400px;
     overflow: hidden;
     position: relative;
+    margin-top: 0;
+    display: block;
+    line-height: 0;
 }
 
     .hero-banner img {
@@ -264,6 +268,7 @@ h1, h2, h3, h4, h5, h6 {
         height: 100%;
         object-fit: cover;
         display: block;
+        vertical-align: bottom;
     }
 
 .main {
@@ -984,7 +989,60 @@ h1, h2, h3, h4, h5, h6 {
         visibility: visible;
     }
 
+/* Кнопка «В начало» — левый нижний угол */
+.back-to-top {
+    position: fixed;
+    left: 20px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1a365d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(26, 54, 93, 0.45);
+    z-index: 500;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.85);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.25s ease;
+}
 
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.back-to-top:hover {
+    background: #152a47;
+    color: #fff;
+    transform: scale(1.08);
+}
+
+.back-to-top:active {
+    transform: scale(0.98);
+}
+
+.back-to-top-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 700;
+}
+
+[data-theme="dark"] .back-to-top {
+    background: #1a365d;
+    box-shadow: 0 4px 14px rgba(26, 54, 93, 0.5);
+}
+
+[data-theme="dark"] .back-to-top:hover {
+    background: #243b5e;
+}
+
+/* Мобильное меню: панель слева и оверлей (на ПК скрыты) */
 .mobile-menu-overlay {
     display: none;
     position: fixed;
@@ -1392,7 +1450,11 @@ h1, h2, h3, h4, h5, h6 {
         width: 54%;
     }
 
-    .concrete-table th,
+    .concrete-table th {
+        font-size: 0.65rem;
+        padding: 0.4rem 0.35rem 0.35rem;
+    }
+
     .concrete-table td {
         padding: 0.5rem 0.35rem;
         font-size: 0.75rem;
