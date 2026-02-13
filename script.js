@@ -1,11 +1,45 @@
-const burgerBtn = document.getElementById('burgerBtn');
-const headerNav = document.getElementById('headerNav');
-if (burgerBtn && headerNav) {
+var burgerBtn = document.getElementById('burgerBtn');
+var headerNav = document.getElementById('headerNav');
+var mobileMenuPanel = document.getElementById('mobileMenuPanel');
+var mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+function setMenuOpen(open) {
+    if (headerNav) headerNav.classList.toggle('nav-open', open);
+    if (mobileMenuPanel) mobileMenuPanel.classList.toggle('open', open);
+    if (mobileMenuOverlay) mobileMenuOverlay.classList.toggle('active', open);
+    if (burgerBtn) burgerBtn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open && window.innerWidth <= 768 ? 'hidden' : '';
+}
+
+function closeMobileMenu() {
+    setMenuOpen(false);
+}
+
+if (burgerBtn) {
     burgerBtn.addEventListener('click', function () {
-        const isOpen = headerNav.classList.toggle('nav-open');
-        burgerBtn.setAttribute('aria-expanded', isOpen);
+        var isMobile = window.innerWidth <= 768;
+        var currentlyOpen = isMobile && mobileMenuPanel && mobileMenuPanel.classList.contains('open');
+        if (!isMobile) currentlyOpen = headerNav && headerNav.classList.contains('nav-open');
+        setMenuOpen(!currentlyOpen);
     });
 }
+
+if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+}
+
+document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+        closeMobileMenu();
+    });
+});
+
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) closeMobileMenu();
+});
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mobileMenuPanel && mobileMenuPanel.classList.contains('open')) closeMobileMenu();
+});
 
 
 document.querySelectorAll('.nav-link').forEach(function (link) {
@@ -884,23 +918,25 @@ function initializeCompositionAnimation() {
         return;
     }
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    var observedEl = document.getElementById('composition') || grid;
+    var opts = {
+        threshold: 0.08,
+        rootMargin: '0px 0px 80px 0px'
+    };
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 show();
                 observer.disconnect();
             }
         });
-    }, { threshold: 0.22 });
+    }, opts);
 
-    observer.observe(grid);
+    observer.observe(observedEl);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     initialize();
     initializeCompositionAnimation();
 });
-
-
-
 
