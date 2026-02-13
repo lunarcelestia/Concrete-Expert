@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConcreteExpert - Классы бетона</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+    <div class="custom-cursor custom-cursor--map" id="customCursorMap" aria-hidden="true"></div>
+
+    <header class="header">
+        <div class="header-top">
+            <div class="container header-top-inner">
+                <div class="header-left">
+                    <a href="#top" class="logo-link">
+                        <img src="https://storage.yandexcloud.net/fotora.ru/93a823f923abf5a6.png" alt="БетонЭксперт" class="logo-img">
+                    </a>
+                    <button class="burger-btn" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                        <span class="burger-line"></span>
+                    </button>
+                    <nav class="main-nav header-nav-inline" id="headerNav">
+                        <a href="#strength" class="nav-link">КЛАССЫ ПРОЧНОСТИ</a>
+                        <a href="#composition" class="nav-link">СОСТАВ БЕТОНА</a>
+                        <a href="#application" class="nav-link">ПРИМЕНЕНИЕ</a>
+
+                    </nav>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-banner">
+        <img src="https://storage.yandexcloud.net/fotora.ru/4e158ec310bf3f23.jpeg" alt="БЕТОН И ЕГО ПРИМЕНЕНИЕ" />
+    </div>
+
+    <main class="main">
+        <div class="container">
+            <section class="intro" id="strength">
+                <h2>КЛАССЫ БЕТОНА И ИХ ХАРАКТЕРИСТИКИ</h2>
+                <p>Выберите класс бетона для просмотра подробной информации</p>
+            </section>
+
+            <section class="table-section">
+                <div class="table-wrapper">
+                    <table class="concrete-table" id="concreteTable">
+                        <thead>
+                            <tr>
+                                <th>Класс бетона</th>
+                                <th>Прочность на сжатие (МПа)</th>
+                                <th>Область применения</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-class="B10" data-strength="9.8" data-mark="М150">
+                                <td><strong>B10</strong></td>
+                                <td>9.8-13.4 МПа</td>
+                                <td>Подготовительные работы, подбетонка</td>
+                            </tr>
+                            <tr data-class="B12.5" data-strength="16.1" data-mark="М150">
+                                <td><strong>B12.5</strong></td>
+                                <td>16.1 МПа</td>
+                                <td>Стяжки полов, дорожки, бордюры</td>
+                            </tr>
+                            <tr data-class="B15" data-strength="19.6" data-mark="М200">
+                                <td><strong>B15</strong></td>
+                                <td>19.6-22.5 МПа</td>
+                                <td>Фундаменты малоэтажных зданий, отмостки</td>
+                            </tr>
+                            <tr data-class="B20" data-strength="26.2" data-mark="М250">
+                                <td><strong>B20</strong></td>
+                                <td>26.2 МПа</td>
+                                <td>Ленточные фундаменты, плиты перекрытий</td>
+                            </tr>
+                            <tr data-class="B22.5" data-strength="29.4" data-mark="М300">
+                                <td><strong>B22.5</strong></td>
+                                <td>29.4 МПа</td>
+                                <td>Монолитные стены, фундаменты под коттеджи</td>
+                            </tr>
+                            <tr data-class="B25" data-strength="32.7" data-mark="М350">
+                                <td><strong>B25</strong></td>
+                                <td>32.7 МПа</td>
+                                <td>Многоэтажное жилое строительство, колонны</td>
+                            </tr>
+                            <tr data-class="B27.5" data-strength="36.0" data-mark="М350">
+                                <td><strong>B27.5</strong></td>
+                                <td>36.0 МПа</td>
+                                <td>Несущие конструкции повышенной нагрузки</td>
+                            </tr>
+                            <tr data-class="B30" data-strength="39.3" data-mark="М400">
+                                <td><strong>B30</strong></td>
+                                <td>39.3 МПа</td>
+                                <td>Фундаменты многоэтажек, промышленные объекты</td>
+                            </tr>
+                            <tr data-class="B35" data-strength="45.8" data-mark="М450">
+                                <td><strong>B35</strong></td>
+                                <td>45.8 МПа</td>
+                                <td>Мосты, эстакады, ответственные конструкции</td>
+                            </tr>
+                            <tr data-class="B40" data-strength="52.4" data-mark="М550">
+                                <td><strong>B40</strong></td>
+                                <td>52.4 МПа</td>
+                                <td>Гидротехнические сооружения, специальные объекты</td>
+                            </tr>
+                            <tr data-class="B45" data-strength="58.9" data-mark="М600">
+                                <td><strong>B45</strong></td>
+                                <td>58.9 МПа</td>
+                                <td>Высотное строительство, уникальные конструкции</td>
+                            </tr>
+                            <tr data-class="B50" data-strength="65.5" data-mark="М650">
+                                <td><strong>B50</strong></td>
+                                <td>65.5 МПа</td>
+                                <td>Специальные военные и защитные сооружения</td>
+                            </tr>
+                            <tr data-class="B55" data-strength="72.0" data-mark="М700">
+                                <td><strong>B55</strong></td>
+                                <td>72.0 МПа</td>
+                                <td>Критически важные объекты повышенной безопасности</td>
+                            </tr>
+                            <tr data-class="B60" data-strength="78.0" data-mark="М800">
+                                <td><strong>B60</strong></td>
+                                <td>78.0 МПа</td>
+                                <td>Особо ответственные конструкции (АЭС, дамбы)</td>
+                            </tr>
+                            <tr data-class="B65" data-strength="85.5" data-mark="М850">
+                                <td><strong>B65</strong></td>
+                                <td>85.5 МПа</td>
+                                <td>Специальное применение в экстремальных условиях</td>
+                            </tr>
+                            <tr data-class="B70" data-strength="93.0" data-mark="М900">
+                                <td><strong>B70</strong></td>
+                                <td>93.0 МПа</td>
+                                <td>Уникальные инженерные сооружения</td>
+                            </tr>
+                            <tr data-class="B75" data-strength="100.5" data-mark="М950">
+                                <td><strong>B75</strong></td>
+                                <td>100.5 МПа</td>
+                                <td>Специальные научные и исследовательские объекты</td>
+                            </tr>
+                            <tr data-class="B80" data-strength="108.0" data-mark="М1000">
+                                <td><strong>B80</strong></td>
+                                <td>108.0 МПа</td>
+                                <td>Экспериментальные и аэрокосмические конструкции</td>
+                            </tr>
+                            <tr data-class="B85" data-strength="115.5" data-mark="М1050">
+                                <td><strong>B85</strong></td>
+                                <td>115.5 МПа</td>
+                                <td>Высокотехнологичные специальные применения</td>
+                            </tr>
+                            <tr data-class="B90" data-strength="123.0" data-mark="М1100">
+                                <td><strong>B90</strong></td>
+                                <td>123.0 МПа</td>
+                                <td>Футуристические и экспериментальные материалы</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- СОСТАВ БЕТОНА -->
+        <section class="composition-section" id="composition">
+            <div class="container">
+                <h2>СОСТАВ БЕТОНА</h2>
+            </div>
+            <div class="composition-image-wrapper">
+                <div class="composition-collage" id="compositionCollage" aria-label="Фотографии состава бетона">
+                    <figure class="composition-collage-item">
+                        <img src="https://storage.yandexcloud.net/fotora.ru/851fa035bb823833.jpeg" alt="Цемент" loading="lazy" />
+                    </figure>
+                    <figure class="composition-collage-item">
+                        <img src="https://storage.yandexcloud.net/fotora.ru/740fa6e5e8ba8b23.jpeg" alt="Щебень" loading="lazy" />
+                    </figure>
+                    <figure class="composition-collage-item">
+                        <img src="https://storage.yandexcloud.net/fotora.ru/5e6d69588ade2ad7.jpeg" alt="Песок" loading="lazy" />
+                    </figure>
+                    <figure class="composition-collage-item">
+                        <img src="https://storage.yandexcloud.net/fotora.ru/94c4bfb6075ddc72.jpeg" alt="Вода" loading="lazy" />
+                    </figure>
+                    <figure class="composition-collage-item">
+                        <img src="https://storage.yandexcloud.net/fotora.ru/085aec25f0441d58.jpeg" alt="Добавки" loading="lazy" />
+                    </figure>
+                </div>
+            </div>
+
+            <div class="composition-grid-wrapper">
+                <div class="composition-grid" id="compositionGrid">
+                    <article class="composition-card" data-seq="1">
+                        <h3 class="composition-card-title">ЦЕМЕНТ</h3>
+                        <div class="composition-card-rule"></div>
+                        <p class="composition-card-text">
+                            Цемент скрепляет песок и щебень в единую массу. При контакте с водой он вступает в химическую реакцию и твердеет, образуя прочную каменную структуру. От качества связующего элемента напрямую зависит итоговая прочность бетона.
+                            <br><br>
+                            Для большинства частных работ используют портландцемент (самый распространенный вид, состоит из клинкера, гипса и минеральных добавок) марок М400 или М500. Материал должен быть максимально свежим, так как быстро впитывает влагу из воздуха и теряет активность. Если цемент скомковался или месяцами хранится без герметичной упаковки, его эффективность заметно снижается.
+                        </p>
+                    </article>
+
+                    <article class="composition-card" data-seq="3">
+                        <h3 class="composition-card-title">ПЕСОК</h3>
+                        <div class="composition-card-rule"></div>
+                        <p class="composition-card-text">
+                            Песок заполняет пространство между щебнем и цементом, за счет чего бетонный раствор становится плотным и однородным. Лучше всего подходит просеянный речной или карьерный песок без глины, ила и других органических примесей. Перед замешиванием сырье просеивают с помощью сита и при необходимости подсушивают.
+                            <br><br>
+                            Лучше всего подходит средняя фракция (от 2 до 2,5 мм).
+                            <br><br>
+                            Частая ошибка при приготовлении раствора бетона — не учитывать влажность песка. Даже слегка сырой содержит часть воды, и если добавить жидкость в замес по стандартной норме без проверки консистенции, то раствор потеряет прочность.
+                        </p>
+                    </article>
+
+                    <article class="composition-card" data-seq="2">
+                        <h3 class="composition-card-title">ЩЕБЕНЬ ИЛИ ГРАВИЙ</h3>
+                        <div class="composition-card-rule"></div>
+                        <p class="composition-card-text">
+                            Щебень занимает практически весь объем раствора. Это основной несущий компонент бетона, который принимает на себя нагрузку и обеспечивает долговечность конструкции. Отвечает за прочность при сжатии, что особенно важно для фундаментов. Гравий тоже допустим, но сцепление с цементом у него хуже из-за гладкой поверхности.
+                            <br><br>
+                            В частном строительстве чаще всего используют щебень фракции 5–20 мм, обязательно чистый, без пыли и земли. Он хорошо уплотняется и равномерно распределяется в смеси. Пропорции песка и щебня подбирают так, чтобы масса не была пустотелой и легко укладывалась. Если баланс нарушен, бетон либо получается слишком хрупким, либо приходится расходовать слишком много цемента.
+                        </p>
+                    </article>
+
+                    <article class="composition-card" data-seq="4">
+                        <h3 class="composition-card-title">ВОДА И ДОБАВКИ</h3>
+                        <div class="composition-card-rule"></div>
+                        <p class="composition-card-text">
+                            Жидкость запускает процесс твердения цемента и делает смесь пластичной. Используют чистую воду без масел, солей и органических примесей — подойдет обычная водопроводная.
+                            <br><br>
+                            Чтобы изменить свойства смеси под конкретную задачу используют добавки для бетона. Они не обязательны, но в ряде случаев сильно упрощают работу и улучшают результат. В состав бетона могут входить: пластификаторы, ускорители твердения, замедлители твердения, антифризы, гидрофобизаторы, обеспыливатели, красители, фиброволокно.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider section-divider--blue section-divider--inset"></div>
+
+        <!-- карусель -->
+        <section class="carousel-section" id="application">
+            <div class="container">
+                <h2>БЕТОН И ЕГО ПРИМЕНЕНИЕ</h2>
+            </div>
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Предыдущий слайд">‹</button>
+                <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Следующий слайд">›</button>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-slides" id="carouselSlides">
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <h3>Высотное строительство</h3>
+                                <p>B35-B60. Несущий каркас современного города. Прочность до 60 МПа позволяет возводить конструкции, уходящие в облака.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <h3>Мосты и эстакады</h3>
+                                <p>B30-B45. Надежность в условиях постоянной динамической нагрузки и агрессивной среды. Специальные марки с повышенной морозостойкостью (F300).</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <h3>Частное домостроение</h3>
+                                <p>B20-B25. Основа вашего дома. Оптимальное сочетание надежности и стоимости для фундаментов, перекрытий и стен.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <h3>Промышленные полы и склады</h3>
+                                <p>B25-B30. Устойчивость к истиранию и ударным нагрузкам. Специальные покрытия выдерживают движение тяжелой техники 24/7.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <h3>Гидротехнические сооружения</h3>
+                                <p>B30-B45 + W8-W16. Бетон, который не боится воды. Марки с максимальной водонепроницаемостью для строительства в постоянном контакте с влагой.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <h3>Архитектурный бетон</h3>
+                                <p>Эстетика прочности. Не только конструкционный материал, но и инструмент для смелых архитектурных решений и дизайна.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- панель -->
+    <aside class="side-panel" id="sidePanel">
+        <div class="panel-header">
+            <h2 id="panelTitle">Класс бетона</h2>
+            <button class="close-btn" id="closePanel" aria-label="Закрыть панель">×</button>
+        </div>
+        <div class="panel-content">
+            <div class="detail-item">
+                <span class="detail-label">Класс:</span>
+                <span class="detail-value" id="panelClass">-</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Марка:</span>
+                <span class="detail-value" id="panelMark">-</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Прочность на сжатие:</span>
+                <span class="detail-value" id="panelStrength">-</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Водонепроницаемость (W):</span>
+                <span class="detail-value" id="panelWaterproof">-</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Морозостойкость (F):</span>
+                <span class="detail-value" id="panelFrost">-</span>
+            </div>
+            <div class="detail-item full-width">
+                <span class="detail-label">Область применения:</span>
+                <p class="detail-description" id="panelDescription">-</p>
+            </div>
+
+            <div class="test-section">
+                <h3>Виртуальное испытание прочности</h3>
+                <button class="test-btn" id="testBtn">Протестировать прочность</button>
+
+                <div class="test-visualization" id="testVisualization" style="display: none;">
+                    <div class="cube-container">
+                        <img id="cubeImage" class="cube-image" src="https://storage.yandexcloud.net/fotora.ru/b4b3dfc658364a35.jpeg" alt="Бетонный куб">
+                    </div>
+
+                    <div class="strength-display">
+                        <span class="strength-label">Текущая нагрузка:</span>
+                        <span class="strength-value" id="currentStrength">0.0</span>
+                        <span class="strength-unit">МПа</span>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-labels">
+                            <span>0%</span>
+                            <span id="progressPercent">0%</span>
+                            <span id="maxStrength">100%</span>
+                        </div>
+                    </div>
+
+                    <div class="test-result-message" id="testResultMessage"></div>
+
+                    <button class="reset-btn" id="resetBtn" style="display: none;">Сбросить</button>
+                </div>
+
+                <button class="compare-btn" id="compareBtn" style="display: none;">Сравнить</button>
+
+                <div class="comparison-section" id="comparisonSection" style="display: none;">
+                    <h4 class="comparison-title">Как выглядит прочность B25 в реальном мире</h4>
+                    <div class="comparison-row">
+                        <div class="comparison-item" id="compConcrete">
+                            <div class="comparison-label">Класс бетона</div>
+                            <div class="comparison-value">B25</div>
+                            <div class="comparison-sub">Прочность ~32.9 МПа</div>
+                        </div>
+                        <div class="comparison-item" id="compCars">
+                            <div class="comparison-label">Эквивалент по весу</div>
+                            <div class="comparison-value">3 авто</div>
+                            <div class="comparison-sub">3 легковых автомобиля на ладони</div>
+                        </div>
+                        <div class="comparison-item" id="compSea">
+                            <div class="comparison-label">Гидростатическое давление</div>
+                            <div class="comparison-value">Балтийское море</div>
+                            <div class="comparison-sub">Глубины порядка 300+ метров</div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-text" id="comparisonText">
+                        Давление 32.9 МПа, распределённое на площади человеческой ладони (~100 см²),
+                        эквивалентно весу трёх легковых автомобилей (например, Toyota Camry) массой по 1500 кг каждый.
+                        В реальности такое давление встречается в гидравлических прессах.
+                        <ul>
+                            <li>Средний легковой автомобиль: 1500 кг</li>
+                            <li>Площадь ладони взрослого человека: ~100 см²</li>
+                            <li>32.9 МПа = 329 атмосфер ≈ 329 кг/см²</li>
+                        </ul>
+                        Прочность B25 соответствует давлению на глубине около 327 метров под водой.
+                        Это на ~80 метров ниже, чем находится известный затонувший корабль «Гогланд» в Финском заливе.
+                        <ul>
+                            <li>Глубина Балтийского моря: до 459 м (макс.), в среднем 55 м</li>
+                            <li>Давление возрастает на 1 атмосферу каждые 10 метров</li>
+                            <li>На глубине 327 м давление ≈ 32.7 МПа</li>
+                        </ul>
+                    </div>
+
+                    <div class="comparison-divider" id="comparisonDivider"></div>
+
+                    <p class="comparison-text-secondary" id="comparisonTextSecondary">
+                        Такая прочность позволяет бетонной плите толщиной 20 см выдержать собственный вес,
+                        умноженный примерно в 7 раз. В строительстве это означает высочайшую несущую способность
+                        для ответственных конструкций.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
