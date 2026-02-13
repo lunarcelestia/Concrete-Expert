@@ -1144,111 +1144,115 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 100%;
     }
 
-    .header-top .container {
-        flex-wrap: wrap; /* МЕНЯЕМ ОБРАТНО НА wrap, чтобы бургер был под лого */
-        gap: 0.5rem;
+    /* Меняем порядок элементов в шапке */
+    .header-top-inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
-    /* Уменьшаем логотип, но оставляем читаемым */
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%; /* Занимает всю ширину */
+    }
+
+    /* Логотип и бургер в одной строке */
     .logo-link {
-        height: 60px; /* НЕМНОГО УВЕЛИЧИЛ */
+        height: 60px;
     }
 
     .logo-img {
-        height: 60px; /* НЕМНОГО УВЕЛИЧИЛ */
+        height: 60px;
         width: auto;
     }
 
-    .logo {
-        font-size: 1.4rem;
+    .burger-btn {
+        margin-left: auto; /* Прижимает бургер вправо */
     }
 
-    .header-nav {
-        padding: 0.5rem 0;
-        width: 100%; /* Чтобы занимал всю ширину */
+    /* Кнопки меню - на следующей строке, под бургером */
+    .header-nav-inline {
+        width: 100%;
+        order: 3; /* Ставим после всего */
+        margin-top: 0.5rem;
     }
 
     .main-nav {
         width: 100%;
         display: flex;
-        justify-content: center;
-        gap: 0.75rem; /* УВЕЛИЧИЛ зазор между кнопками */
+        justify-content: flex-start; /* Выравниваем слева */
+        gap: 0.75rem;
         flex-wrap: wrap;
     }
 
     .nav-link {
-        font-size: 0.9rem; /* УВЕЛИЧИЛ обратно */
-        padding: 0.5rem 1rem; /* УВЕЛИЧИЛ обратно */
-        white-space: nowrap; /* Запрещаем перенос текста в кнопках */
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
     }
 
+    /* Кнопка темы тоже на первой строке, справа */
+    .theme-toggle {
+        margin-left: auto; /* Прижимает вправо */
+    }
+
+    /* Остальные стили без изменений */
     .hero-banner {
         height: 25vh;
         min-height: 200px;
         max-height: 300px;
     }
 
-    /* УМЕНЬШАЕМ ЗАГОЛОВКИ, НО НЕ СИЛЬНО */
     .intro h2 {
-        font-size: 2.2rem; /* УВЕЛИЧИЛ */
+        font-size: 2.2rem;
         line-height: 1.2;
         word-break: break-word;
     }
 
     .composition-section h2 {
-        font-size: 2.2rem; /* УВЕЛИЧИЛ */
+        font-size: 2.2rem;
         line-height: 1.2;
         word-break: break-word;
     }
 
     .carousel-section h2 {
-        font-size: 2.2rem; /* УВЕЛИЧИЛ */
+        font-size: 2.2rem;
         word-break: break-word;
     }
 
-    /* ТАБЛИЦА - УВЕЛИЧИВАЕМ ТЕКСТ, НО ОСТАВЛЯЕМ ПЕРЕНОСЫ */
     .table-wrapper {
-        overflow-x: auto; /* ВОЗВРАЩАЕМ скролл, если не влезает */
+        overflow-x: auto;
         width: 100%;
         -webkit-overflow-scrolling: touch;
     }
 
     .concrete-table {
-        font-size: 1rem; /* УВЕЛИЧИЛ обратно */
-        min-width: 100%; /* Таблица на всю ширину */
+        font-size: 1rem;
+        min-width: 100%;
         border-spacing: 0 0.5rem;
     }
 
     .concrete-table th {
-        padding: 0.6rem 0.5rem; /* УВЕЛИЧИЛ */
-        font-size: 0.85rem; /* УВЕЛИЧИЛ */
+        padding: 0.6rem 0.5rem;
+        font-size: 0.85rem;
         white-space: normal;
         line-height: 1.2;
     }
 
     .concrete-table td {
-        padding: 0.8rem 0.5rem; /* УВЕЛИЧИЛ */
-        font-size: 0.95rem; /* УВЕЛИЧИЛ */
+        padding: 0.8rem 0.5rem;
+        font-size: 0.95rem;
         line-height: 1.4;
         white-space: normal;
         word-break: break-word;
     }
 
     .concrete-table td strong {
-        font-size: 1.1rem; /* УВЕЛИЧИЛ */
+        font-size: 1.1rem;
     }
 
-    /* Убираем фиксированную ширину колонок - пусть таблица сама распределяет */
-    .concrete-table th:nth-child(1),
-    .concrete-table td:nth-child(1),
-    .concrete-table th:nth-child(2),
-    .concrete-table td:nth-child(2),
-    .concrete-table th:nth-child(3),
-    .concrete-table td:nth-child(3) {
-        width: auto; /* Автоматическая ширина */
-    }
-
-    /* ОСТАЛЬНЫЕ СТИЛИ */
     .composition-image-wrapper {
         width: 100%;
         padding: 0 16px;
@@ -1291,19 +1295,19 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .panel-header h2 {
-        font-size: 1.8rem; /* УВЕЛИЧИЛ */
+        font-size: 1.8rem;
     }
 
     .test-section h3 {
-        font-size: 1.3rem; /* УВЕЛИЧИЛ */
+        font-size: 1.3rem;
     }
 
     .slide-content h3 {
-        font-size: 1.6rem; /* УВЕЛИЧИЛ */
+        font-size: 1.6rem;
     }
 
     .slide-content p {
-        font-size: 1.1rem; /* УВЕЛИЧИЛ */
+        font-size: 1.1rem;
     }
 }
 
@@ -1325,7 +1329,6 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0.4rem 0.8rem;
     }
 
-    /* Таблица для очень маленьких экранов */
     .concrete-table td {
         padding: 0.6rem 0.4rem;
         font-size: 0.85rem;
