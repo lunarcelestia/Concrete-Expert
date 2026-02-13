@@ -899,6 +899,68 @@ function initializeCompositionAnimation() {
 document.addEventListener('DOMContentLoaded', () => {
     initialize();
     initializeCompositionAnimation();
+
+const mobileBurgerBtn = document.getElementById('burgerBtn');
+const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+//меню
+if (mobileBurgerBtn && mobileMenuPanel && mobileOverlay) {
+    mobileBurgerBtn.addEventListener('click', function() {
+        mobileMenuPanel.classList.add('active');
+        mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+    });
+}
+
+
+function closeMobileMenu() {
+    if (mobileMenuPanel && mobileOverlay) {
+        mobileMenuPanel.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+if (mobileMenuClose) {
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+}
+
+if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', closeMobileMenu);
+}
+
+
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        
+
+        closeMobileMenu();
+        
+
+        setTimeout(() => {
+            if (targetId === '#top' || targetId === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }, 300); 
+    });
 });
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileMenuPanel && mobileMenuPanel.classList.contains('active')) {
+        closeMobileMenu();
+    }
+});
+});
+
 
 
